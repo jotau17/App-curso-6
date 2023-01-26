@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private NavigationView nav_view;
     private ActionBarDrawerToggle drawerToggle;
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
