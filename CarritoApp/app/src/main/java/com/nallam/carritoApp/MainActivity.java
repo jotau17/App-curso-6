@@ -14,7 +14,7 @@ import com.nallam.carritoApp.vistas.ComprasFragment;
 import com.nallam.carritoApp.vistas.FavsFragment;
 import com.nallam.carritoApp.vistas.HomeFragment;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity /*implements NavigationView.OnNavigationItemSelectedListener */{
     private DrawerLayout drawer_layout;
     private Toolbar toolbar;
     private NavigationView nav_view;
@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        toolbar = findViewById(R.id.toolbar);
+        setContentView(R.layout.login_activity);
+        /*toolbar = findViewById(R.id.toolbar);
         drawer_layout = findViewById(R.id.drawer_layout);
         nav_view = findViewById(R.id.nav_view);
 
@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         nav_view.setNavigationItemSelectedListener(this);
-        ((TextView) findViewById(R.id.toolbarIndicator)).setText("20");
+        ((TextView) findViewById(R.id.toolbarIndicator)).setText("20");*/
     }
 
-    @Override
+    /*@Override
     public void onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START);
@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return super.onOptionsItemSelected(item);
 
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
@@ -88,5 +88,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer_layout.closeDrawer(GravityCompat.START);
         return true;
-    }
+    }*/
 }
