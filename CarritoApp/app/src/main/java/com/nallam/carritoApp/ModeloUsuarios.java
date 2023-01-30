@@ -32,7 +32,7 @@ public class ModeloUsuarios {
 
     int consultaUsuario(Context context, UsuariosDTO usuario){
         int res = 0;
-        String sentenciaSql = "SELECT * FROM usuarios WHERE email = '"+ usuario.getEmail()+"'";
+        String sentenciaSql = "SELECT * FROM usuarios WHERE email = '"+ usuario.getEmail()+"' AND password ='"+usuario.getPassword()+"'";
 
         SQLiteDatabase db = this.getConnection(context);
         try {
