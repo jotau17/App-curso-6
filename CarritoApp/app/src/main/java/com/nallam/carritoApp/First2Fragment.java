@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.nallam.carritoApp.databinding.LoginActivityBinding;
+import com.nallam.carritoApp.databinding.FragmentFirst2Binding;
 
-public class LoginFragment extends Fragment {
+public class First2Fragment extends Fragment {
 
-    private LoginActivityBinding binding;
+    private FragmentFirst2Binding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class LoginFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = LoginActivityBinding.inflate(inflater, container, false);
+        binding = FragmentFirst2Binding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,11 +29,11 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
+        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(LoginFragment.this)
-                        .navigate(R.id.action_to_Home);
+                NavHostFragment.findNavController(First2Fragment.this)
+                        .navigate(R.id.action_First2Fragment_to_Second2Fragment);
             }
         });
     }

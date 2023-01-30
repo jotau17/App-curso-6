@@ -9,12 +9,14 @@
         android:id="@+id/LoginFragment"
         android:name="com.nallam.carritoApp.FirstFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/login_activity">
 
         <action
             android:id="@+id/action_to_Home"
             app:destination="@id/SecondFragment" />
+
     </fragment>
+
     <!--<fragment
         android:id="@+id/FirstFragment"
         android:name="com.nallam.carritoApp.FirstFragment"
