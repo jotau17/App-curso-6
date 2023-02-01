@@ -35,11 +35,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 final String regex = "(?:[^<>()\\[\\].,;:\\s@\"]+(?:\\.[^<>()\\[\\].,;:\\s@\"]+)*|\"[^\\n\"]+\")@(?:[^<>()\\[\\].,;:\\s@\"]+\\.)+[^<>()\\[\\]\\.,;:\\s@\"]{2,63}";
 
-                if (!compruebaemail.matches(regex))
+                /*if (!compruebaemail.matches(regex))
                 {
                     Toast.makeText(LoginActivity.this, "El email introducido no es válido", Toast.LENGTH_LONG).show();
                     return;
-                }
+                }*/
 
                 EditText usrInputPassword = findViewById(R.id.userPassword);
                 EditText usrInputEmail = findViewById(R.id.userEmail);
@@ -49,8 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                 usuario.setPassword(usrInputPassword.getText().toString());
                 ModeloUsuarios usr = new ModeloUsuarios();
                 int res = usr.consultaUsuario(LoginActivity.this, usuario);
-                if (res == 1) {
+                if (res != 1000) {
                     Toast.makeText(LoginActivity.this, "Logueado con éxito", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(LoginActivity.this, Content.class);
+                    startActivity(i);
                 } else
                     Toast.makeText(LoginActivity.this, "Error en las credenciales", Toast.LENGTH_SHORT).show();
 

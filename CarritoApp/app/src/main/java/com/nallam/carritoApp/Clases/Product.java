@@ -1,25 +1,38 @@
 package com.nallam.carritoApp.Clases;
 
+import android.net.Uri;
+
 public class Product {
     private String title;
-    private double price;
+    private String price;
     private int image;
+    private int Id;
 
-    public Product(String title, double price, int image) {
+    public Product(String title, String price, int image) {
         this.title = title;
         this.price = price;
         this.image = image;
+    }
+    public Product(String title, String price, int image, int id) {
+        this.title = title;
+        this.price = price;
+        this.image = image;
+        this.Id = id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public int getImage() {
-        return image;
+    public Uri getImage() {
+        return Uri.parse(String.valueOf(image));
+    }
+
+    public int getId() {
+        return this.Id;
     }
 }

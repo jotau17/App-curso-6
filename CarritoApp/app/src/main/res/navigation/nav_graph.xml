@@ -3,38 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/LoginFragment">
+    app:startDestination="@id/FirstFragment">
 
     <fragment
-        android:id="@+id/LoginFragment"
-        android:name="com.nallam.carritoApp.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/login_activity">
-
-        <action
-            android:id="@+id/action_to_Home"
-            app:destination="@id/SecondFragment" />
-
-    </fragment>
-
-    <!--<fragment
         android:id="@+id/FirstFragment"
         android:name="com.nallam.carritoApp.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/login_fragment"
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_login_to_register"
             app:destination="@id/SecondFragment" />
-    </fragment>-->
+        <action
+        android:id="@+id/action_to_content_menu"
+        app:destination="@id/ContentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ContentFragment"
+        android:name="com.nallam.carritoApp.ContentFragment"
+        android:label="Menu"
+        tools:layout="@layout/content_main">
+    </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.nallam.carritoApp.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/register_fragment"
         tools:layout="@layout/fragment_second">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/LoginFragment" />
+            android:id="@+id/action_to_login"
+            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
