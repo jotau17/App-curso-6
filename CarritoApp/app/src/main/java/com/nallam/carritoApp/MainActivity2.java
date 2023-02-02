@@ -1,8 +1,13 @@
 package com.nallam.carritoApp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -17,6 +22,7 @@ import java.util.ArrayList;
 public class MainActivity2 extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
+    private Button btn;
     private ActivityMainBinding binding;
     private ListView listview;
     private ArrayList<String> names;
@@ -35,6 +41,14 @@ public class MainActivity2 extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+        //Button btn = findViewById(R.id.add_to_cart);
+        btn = (Button) findViewById(R.id.add_to_cart);
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "Inicie sesion para ver su carrito", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     /*@Override
@@ -44,6 +58,13 @@ public class MainActivity2 extends AppCompatActivity {
         return true;
     }*/
 
+    public void addToCart(View v){
+        TextView textview = (TextView) v;
+        String author = textview.getText().toString();
+        //String AddOnCartSentence = "INSERT INTO productos (id, productId, usuarioId, cantidad) VALUES ('" + v.findViewById() + "','" + "Producto"+i + "', '" + i*1000 + "','" + i + "')";
+
+        startActivity(new Intent(MainActivity2.this, Cart_Activity.class));
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

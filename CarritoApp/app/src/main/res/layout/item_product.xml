@@ -7,6 +7,7 @@
     app:layout_insetEdge="bottom">
 
     <LinearLayout
+        android:id="@+id/drawable_product"
         android:background="@drawable/shape"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -38,9 +39,11 @@
 
         <Button
             android:id="@+id/add_to_cart"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="addToCart"
             android:text="Añadir al carrito" />
 
 

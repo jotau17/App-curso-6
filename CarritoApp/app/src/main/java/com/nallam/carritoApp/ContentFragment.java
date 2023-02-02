@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +23,7 @@ public class ContentFragment extends Fragment {
     RecyclerView vistaProducto;
     ArrayList<Product> myProducts;
     ProductAdapter adapter;
+    Button addToCartBtn;
 
     @SuppressLint("ResourceType")
     @Override
@@ -35,7 +36,6 @@ public class ContentFragment extends Fragment {
         vistaProducto = binding.getRoot().findViewById(R.id.listaProductos);
 
         vistaProducto.setLayoutManager(new LinearLayoutManager(getContext()));
-        View view = inflater.inflate(R.layout.item_product, container, false);
 
 /*        Button addToCartBtn = view.findViewById(R.id.add_to_cart);*/
         Context ctx = getContext();
@@ -44,24 +44,10 @@ public class ContentFragment extends Fragment {
 
         adapter = new ProductAdapter(usuarios.obtenerProductos(ctx));
         vistaProducto.setAdapter(adapter);
-        /*addToCartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "Se ha añadido al carrito", Toast.LENGTH_LONG).show();
-                Context ctx = getContext();
-            }
-        });*/
-
         return binding.getRoot();
 
     }
 
-    @SuppressLint("ResourceType")
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-    }
 
     @Override
     public void onDestroyView() {
